@@ -3,33 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Scanner</title>
-    <script src="https://unpkg.com/html5-qrcode"></script>
-    <link rel="stylesheet" href="styles.css">
+    <title>QR Code Scanner</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="container">
         <h1>QR Code Scanner</h1>
         
-        <!-- Upload QR Code (Always Visible) -->
-        <input type="file" accept="image/*" onchange="scanFromFile(event)">
-        
-        <!-- Mobile Features (Hidden on PC) -->
-        <div id="mobile-controls">
-            <div id="reader"></div>
-            <button onclick="toggleFlashlight()">Toggle Flashlight</button>
-            <button onclick="startScanner()">Restart Scanner</button>
+        <div id="permission-section">
+            <button id="request-permission" class="big-button">Allow Camera Access</button>
         </div>
 
-        <!-- PC Features (Hidden on Mobile) -->
-        <div id="pc-result">
-            <p id="result">Upload a QR Code to see the result here.</p>
-            <button onclick="copyResult()">Copy Link</button>
-        </div>
+        <input type="file" id="file-input" accept="image/*">
+        <video id="camera" autoplay playsinline></video>
+        
+        <canvas id="qr-canvas"></canvas>
+        <p id="qr-result"></p>
+
+        <button id="switch-camera" class="hidden">Switch Camera</button>
+        <button id="toggle-flashlight" class="hidden">Toggle Flashlight</button>
+        <button id="restart-scanner" class="hidden">Restart Scanner</button>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.3.1/dist/jsQR.min.js"></script>
     <script src="script.js"></script>
-
 </body>
 </html>
