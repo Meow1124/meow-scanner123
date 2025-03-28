@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Scanner</title>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>QR Code Scanner</h1>
+        
+        <!-- Upload QR Code (Always Visible) -->
+        <input type="file" accept="image/*" onchange="scanFromFile(event)">
+        
+        <!-- Mobile Features (Hidden on PC) -->
+        <div id="mobile-controls">
+            <div id="reader"></div>
+            <button onclick="toggleFlashlight()">Toggle Flashlight</button>
+            <button onclick="startScanner()">Restart Scanner</button>
+        </div>
+
+        <!-- PC Features (Hidden on Mobile) -->
+        <div id="pc-result">
+            <p id="result">Upload a QR Code to see the result here.</p>
+            <button onclick="copyResult()">Copy Link</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
