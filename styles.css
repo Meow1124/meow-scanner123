@@ -1,56 +1,75 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(45deg, #ffcc00, #ff6699);
     text-align: center;
-    padding: 20px;
-    color: #fff;
+    background: linear-gradient(45deg, #ff9966, #ff5e62);
+    color: white;
 }
 
 .container {
-    max-width: 400px;
-    margin: auto;
-    background: #fff;
+    background: white;
     padding: 20px;
+    margin: 50px auto;
+    width: 90%;
+    max-width: 400px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     color: black;
 }
 
 h1 {
-    color: #ff5500;
+    color: orange;
 }
 
-#reader {
+#file-input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+    background-color: orange;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#permission-section {
+    display: none;
+}
+
+#request-permission {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+video {
     width: 100%;
-    max-width: 300px;
-    margin: auto;
+    max-height: 300px;
+    display: none;
+    margin: 10px 0;
+}
+
+canvas {
+    display: none;
 }
 
 button {
-    background-color: #ff5500;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    margin: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #ff3300;
-}
-
-input {
     display: block;
+    width: 100%;
     margin: 10px auto;
+    padding: 10px;
+    font-size: 18px;
+    background-color: orange;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-/* Hide mobile controls on PC */
-@media screen and (min-width: 768px) {
-    #mobile-controls { display: none; }
-}
-
-/* Hide PC results on mobile */
-@media screen and (max-width: 767px) {
-    #pc-result { display: none; }
+.hidden {
+    display: none;
 }
